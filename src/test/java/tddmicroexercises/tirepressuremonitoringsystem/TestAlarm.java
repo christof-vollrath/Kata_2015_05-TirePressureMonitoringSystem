@@ -7,12 +7,14 @@ import static org.junit.Assert.*;
 public class TestAlarm {
 
     @Test
+    // Stupid test since alarm.check() ist never called
     public void foo() {
         Alarm alarm = new Alarm();
         assertEquals(false, alarm.isAlarmOn());
     }
 
     @Test @Ignore
+    // Ignored because test will fail randomly depending on the values from sensor.popNextPressurePsiValue
     public void isAlarmOnAfterCeck() {
         Alarm alarm = new Alarm();
         alarm.check();

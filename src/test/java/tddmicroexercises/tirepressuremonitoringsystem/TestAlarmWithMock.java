@@ -11,9 +11,6 @@ import static org.mockito.Mockito.when;
 
 public class TestAlarmWithMock {
 
-    @Mock
-    Alarm alarm2;
-
     @Test
     public void isAlarmOnForHighPressure() {
         Alarm alarm = new Alarm();
@@ -23,13 +20,6 @@ public class TestAlarmWithMock {
         alarm.sensor = sensor;
         alarm.check();
         assertEquals(true, alarm.isAlarmOn());
-    }
-
-    @Test
-    public void isAlarmOnForHighPressure2() {
-        when(alarm2.sensor.popNextPressurePsiValue()).thenReturn(22.0);
-        alarm2.check();
-        assertEquals(true, alarm2.isAlarmOn());
     }
 
     @Test
