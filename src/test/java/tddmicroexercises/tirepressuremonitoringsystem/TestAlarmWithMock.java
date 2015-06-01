@@ -16,7 +16,6 @@ public class TestAlarmWithMock {
         Alarm alarm = new Alarm();
         Sensor sensor = mock(Sensor.class);
         when(sensor.popNextPressurePsiValue()).thenReturn(22.0);
-        System.out.println(sensor.getClass().getName());
         alarm.sensor = sensor;
         alarm.check();
         assertEquals(true, alarm.isAlarmOn());
